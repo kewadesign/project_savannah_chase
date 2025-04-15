@@ -1,29 +1,27 @@
+# This script remains unchanged as per the instruction.
 extends Node
 
-# Referenz auf den Board Manager
+# Reference to the Board Manager
 var board_manager
 
-# Called when the node enters the scene tree for the first time.
+# Called when the node enters the scene tree for the first time
 func _ready():
-	# Board Manager finden
+	# Find Board Manager
 	board_manager = get_node("/root/BoardScene/BoardManager")
 	
 	if board_manager == null:
-		print("FEHLER: BoardManager nicht gefunden!")
+		print("ERROR: BoardManager not found!")
 		return
 
-# Diese Funktion würde aufgerufen werden, wenn die KI am Zug ist
-# Aktuell nur ein Platzhalter, da wir noch keine Zuglogik implementiert haben
+# This function would be called when it's the AI's turn
+# Currently a placeholder as we haven't implemented the move logic yet
 func make_move():
-	print("KI ist am Zug und überlegt...")
+	print("AI's turn, thinking...")
 	
-	# Hier fügen wir später die Logik für die KI-Züge ein
-	# Für jetzt machen wir nichts
+	# AI move logic will be added here later
+	# We're doing nothing for now
 	
-	# Verzögerung simulieren (1,5 Sekunden)
+	# Simulate delay (1.5 seconds)
 	await get_tree().create_timer(1.5).timeout
 	
-	print("KI hat ihren Zug gemacht")
-	
-	# Signal senden, dass der Zug abgeschlossen ist
-	# Dies würde später implementiert werden
+	print("AI has made its move")

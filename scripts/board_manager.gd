@@ -48,13 +48,6 @@ func initialize_board_array():
 func load_materials():
 	white_material = load(WHITE_MATERIAL_PATH)
 	black_material = load(BLACK_MATERIAL_PATH)
-	
-	# Fehlerüberprüfung
-	if white_material == null:
-		print("FEHLER: Weißes Material konnte nicht geladen werden!")
-	if black_material == null:
-		print("FEHLER: Schwarzes Material konnte nicht geladen werden!")
-
 # Setzt das Spiel auf den Anfangszustand zurück
 func setup_new_game():
 	# Alte Figuren entfernen (falls vorhanden)
@@ -110,38 +103,35 @@ func place_piece(piece_scene_path: String, is_white: bool, x: int, y: int):
 	if piece_instance == null:
 		print("FEHLER: Figureninstanz konnte nicht erstellt werden.")
 		return
-	
-	# Figur zum Szenebaum hinzufügen
-	add_child(piece_instance)
-	
+
+	# Figur zum Szenebaum hinzufügen, zum Pieces Node falls vorhanden
+	var pieces_node = get_node("../Pieces")
+	if pieces_node:
+		pieces_node.add_child(piece_instance)
+	else:
+		get_tree().root.add_child(piece_instance)
+		print("WARNUNG: Pieces-Node nicht gefunden, Figur wurde zur Hauptszene hinzugefügt")
+
 	# Material basierend auf Spielerfarbe setzen
 	var mesh_instance = piece_instance.get_node("Mesh")
-	if mesh_instance:
-		if is_white:
-			mesh_instance.set_surface_override_material(0, white_material)
-		else:
-			mesh_instance.set_surface_override_material(0, black_material)
+	if is_white:
+		mesh_instance.set_surface_override_material(0, white_material)
 	else:
-		print("FEHLER: Mesh-Knoten in der Figureninstanz nicht gefunden!")
-	
+		mesh_instance.set_surface_override_material(0, black_material)
+
 	# Position auf dem Brett setzen
-	# Konvertiere Brettkoordinaten (x,y) in 3D-Koordinaten
-	# Anmerkung: Da das GridMap bei (-3.5, -0.5, -3.5) positioniert ist
-	# und die Zellgröße 1x0.1x1 beträgt, müssen wir die Position entsprechend berechnen
-	piece_instance.global_position = Vector3(x - 3.0, 0.1, y - 3.0)
-	
+		# Konvertiere Brettkoordinaten (x,y) in 3D-Koordinaten
+		# GridMap Position: (-3.5, -0.5, -3.5), CellSize: 1x0.1x1
+	piece_instance.global_position = Vector3(x - 3.5, 0.1, y - 3.5)
+
 	# Figur im Brett-Array speichern
 	board[x][y] = piece_instance
-	
+
 	# Figur zur Liste hinzufügen
 	pieces.append(piece_instance)
-	
-	print("Figur platziert: " + piece_scene_path + " an Position (" + str(x) + "," + str(y) + ")")
 
 # Entfernt alle Figuren vom Brett
 func clear_pieces():
 	for piece in pieces:
-		if is_instance_valid(piece):
-			piece.queue_free()
-	
+		piece.queue_free()
 	pieces.clear()

@@ -1,15 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2p7fog77x53f"]
+[gd_scene load_steps=3 format=3 uid="uid://d2p7fog77x53f"]
 
-[ext_resource type="PackedScene" uid="uid://c2c0xv1vocms3" path="res://scenes/piece_base.tscn" id="1_bgwiv"]
 [ext_resource type="ArrayMesh" uid="uid://d5vgyacultei" path="res://assets/models/Animal_Chess_Figures/Gazelle_Chess_Piece.obj" id="2_6r3qw"]
 [ext_resource type="Script" uid="uid://da8n8nmdk70m3" path="res://scripts/gazelle.gd" id="2_imnag"]
 
-[node name="Gazelle" instance=ExtResource("1_bgwiv")]
+[node name="Gazelle" type="Node3D"]
 script = ExtResource("2_imnag")
 
-[node name="Mesh" parent="." index="0"]
+[node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0.0220674, 0)
 mesh = ExtResource("2_6r3qw")
 
-[node name="CollisionShape3D" parent="." index="1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.539605, 0)
