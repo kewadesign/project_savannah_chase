@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1bnnvxo4durk"]
+
+[ext_resource type="MeshLibrary" uid="uid://dqnu3ronox4uc" path="res://scenes/board_mesh_library.tres" id="1_71nyy"]
+[ext_resource type="ArrayMesh" uid="uid://d5vgyacultei" path="res://assets/models/Animal_Chess_Figures/Gazelle_Chess_Piece.obj" id="6_quc2i"]
+[ext_resource type="ArrayMesh" uid="uid://csbpg3nl2u473" path="res://assets/models/Animal_Chess_Figures/Giraffe_Chess_Piece.obj" id="7_j002a"]
+[ext_resource type="Material" uid="uid://ckshpur0nwa7r" path="res://assets/materials/figure_black.tres" id="7_t4b6b"]
+[ext_resource type="ArrayMesh" uid="uid://s43f560lsgkg" path="res://assets/models/Animal_Chess_Figures/Loewe_Chess_Piece.obj" id="8_83fsy"]
+
+[sub_resource type="GDScript" id="GDScript_wws7b"]
+
+[node name="BoardScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, -8.74228e-08, -2.49624e-16, 6.25678e-08, 0.715693, 0.698415, 6.10574e-08, 0.698415, -0.715693, 1.953, 4.81, -8.573)
+current = true
+fov = 63.7
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.353553, -0.353553, 2.4663e-16, 0.707107, 0.707107, 0.5, -0.612372, 0.612372, 0, 0, 0)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_71nyy")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(65534, 1, 0, 65534, 65535, 0, 65534, 65533, 0, 65534, 65531, 0, 65534, 0, 1, 65534, 65534, 1, 65534, 65532, 1, 65534, 65530, 1, 65535, 65531, 1, 0, 65532, 1, 0, 65530, 1, 65535, 65533, 1, 0, 65534, 1, 65535, 65535, 1, 0, 0, 1, 65535, 1, 1, 1, 1, 1, 1, 65535, 1, 1, 65533, 1, 1, 65531, 1, 2, 65530, 131073, 2, 65532, 131073, 2, 65534, 131073, 2, 0, 131073, 3, 1, 131073, 3, 65535, 131073, 3, 65533, 131073, 3, 65531, 131073, 65535, 65532, 131072, 65535, 65530, 131072, 1, 65530, 131072, 3, 65530, 131072, 2, 65531, 131072, 0, 65531, 131072, 1, 65532, 131072, 0, 65533, 131072, 2, 65533, 131072, 3, 65532, 131072, 1, 65534, 131072, 2, 65535, 131072, 3, 65534, 131072, 3, 0, 131072, 2, 1, 131072, 1, 0, 131072, 0, 1, 131072, 0, 65535, 131072, 65535, 65534, 131072, 65535, 0, 131072, 4, 65531, 131072, 5, 65530, 131072, 5, 65532, 131072, 4, 65533, 131072, 5, 65534, 131072, 4, 65535, 131072, 5, 0, 131072, 4, 1, 131072, 4, 0, 131073, 5, 1, 131073, 5, 65535, 131073, 4, 65534, 131073, 5, 65533, 131073, 4, 65532, 131073, 5, 65531, 131073, 4, 65530, 131073)
+}
+
+[node name="GameManager" type="Node" parent="."]
+script = SubResource("GDScript_wws7b")
+
+[node name="Pieces" type="Node3D" parent="."]
+
+[node name="GazelleChessPiece" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.0598e-07, 2.44151e-15, 7, 2.44151e-15, 7, -2.44151e-15, -7, 2.44151e-15, -3.0598e-07, 0.460337, 0.527469, -4.48634)
+mesh = ExtResource("6_quc2i")
+
+[node name="GazelleChessPiece7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.0598e-07, 2.44151e-15, 7, 2.44151e-15, 7, -2.44151e-15, -7, 2.44151e-15, -3.0598e-07, -0.463947, 0.527469, -5.57311)
+mesh = ExtResource("6_quc2i")
+
+[node name="GazelleChessPiece2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.0598e-07, 2.44151e-15, 7, 2.44151e-15, 7, -2.44151e-15, -7, 2.44151e-15, -3.0598e-07, 2.49081, 0.527469, -4.48634)
+mesh = ExtResource("6_quc2i")
+
+[node name="GazelleChessPiece3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.0598e-07, 2.44151e-15, 7, 2.44151e-15, 7, -2.44151e-15, -7, 2.44151e-15, -3.0598e-07, 1.49436, 0.527469, -4.48634)
+mesh = ExtResource("6_quc2i")
+
+[node name="GazelleChessPiece5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.0598e-07, 2.44151e-15, 7, 2.44151e-15, 7, -2.44151e-15, -7, 2.44151e-15, -3.0598e-07, 4.56073, 0.527469, -5.51457)
+mesh = ExtResource("6_quc2i")
+
+[node name="GazelleChessPiece6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.0598e-07, 2.44151e-15, 7, 2.44151e-15, 7, -2.44151e-15, -7, 2.44151e-15, -3.0598e-07, 3.56428, 0.527469, -4.48634)
+mesh = ExtResource("6_quc2i")
+
+[node name="GiraffeChessPiece" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.0598e-07, 2.44151e-15, 7, 2.44151e-15, 7, -2.44151e-15, -7, 2.44151e-15, -3.0598e-07, 1.4725, 0.535251, -5.52882)
+mesh = ExtResource("7_j002a")
+
+[node name="LoeweChessPiece" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.0598e-07, 2.44151e-15, 7, 2.44151e-15, 7, -2.44151e-15, -7, 2.44151e-15, -3.0598e-07, 2.47944, 0.550534, -5.48851)
+mesh = ExtResource("8_83fsy")
+
+[node name="GazelleChessPiece4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00134424, -2.44104e-15, -7, 2.44151e-15, 7, -2.44151e-15, 7, -2.44198e-15, -0.00134424, 3.53217, 0.527469, 0.426568)
+material_override = ExtResource("7_t4b6b")
+mesh = ExtResource("6_quc2i")
+
+[node name="GazelleChessPiece8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00134424, -2.44104e-15, -7, 2.44151e-15, 7, -2.44151e-15, 7, -2.44198e-15, -0.00134424, 4.45624, 0.527469, 1.51352)
+material_override = ExtResource("7_t4b6b")
+mesh = ExtResource("6_quc2i")
+
+[node name="GazelleChessPiece9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00134424, -2.44104e-15, -7, 2.44151e-15, 7, -2.44151e-15, 7, -2.44198e-15, -0.00134424, 1.5017, 0.527469, 0.426178)
+material_override = ExtResource("7_t4b6b")
+mesh = ExtResource("6_quc2i")
+
+[node name="GazelleChessPiece10" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00134424, -2.44104e-15, -7, 2.44151e-15, 7, -2.44151e-15, 7, -2.44198e-15, -0.00134424, 2.49815, 0.527469, 0.426369)
+material_override = ExtResource("7_t4b6b")
+mesh = ExtResource("6_quc2i")
+
+[node name="GazelleChessPiece11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00134424, -2.44104e-15, -7, 2.44151e-15, 7, -2.44151e-15, 7, -2.44198e-15, -0.00134424, -0.568425, 0.527469, 1.45402)
+mesh = ExtResource("6_quc2i")
+surface_material_override/0 = ExtResource("7_t4b6b")
+
+[node name="GazelleChessPiece12" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00134424, -2.44104e-15, -7, 2.44151e-15, 7, -2.44151e-15, 7, -2.44198e-15, -0.00134424, 0.428224, 0.527469, 0.425972)
+material_override = ExtResource("7_t4b6b")
+mesh = ExtResource("6_quc2i")
+
+[node name="GiraffeChessPiece2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00134424, -2.44104e-15, -7, 2.44151e-15, 7, -2.44151e-15, 7, -2.44198e-15, -0.00134424, 2.5198, 0.535251, 1.46885)
+material_override = ExtResource("7_t4b6b")
+mesh = ExtResource("7_j002a")
+
+[node name="LoeweChessPiece2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00134424, -2.44104e-15, -7, 2.44151e-15, 7, -2.44151e-15, 7, -2.44198e-15, -0.00134424, 1.51287, 0.550534, 1.42836)
+material_override = ExtResource("7_t4b6b")
+mesh = ExtResource("8_83fsy")

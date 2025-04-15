@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddwlqt0l4holj"]
+
+[ext_resource type="PackedScene" uid="uid://c2c0xv1vocms3" path="res://scenes/piece_base.tscn" id="1_rwwao"]
+[ext_resource type="ArrayMesh" uid="uid://s43f560lsgkg" path="res://assets/models/Animal_Chess_Figures/Loewe_Chess_Piece.obj" id="2_w8jny"]
+
+[node name="Lion" instance=ExtResource("1_rwwao")]
+
+[node name="Mesh" parent="." index="0"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0.024861, 0)
+mesh = ExtResource("2_w8jny")
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.578444, 0)

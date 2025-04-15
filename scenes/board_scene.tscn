@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqj1va0p2bvo5"]
+
+[ext_resource type="Script" uid="uid://oyj8dy16uy1s" path="res://scripts/ai_controller.gd" id="1_h6wsc"]
+[ext_resource type="MeshLibrary" uid="uid://dqnu3ronox4uc" path="res://scenes/board_mesh_library.tres" id="1_sb2le"]
+[ext_resource type="Script" uid="uid://c2pxwkqlo70mv" path="res://scripts/game_manager.gd" id="2_bf7bl"]
+[ext_resource type="Script" uid="uid://b8anlxe53bjs5" path="res://scripts/board_manager.gd" id="3_014cc"]
+[ext_resource type="Script" uid="uid://co340osw70w27" path="res://ui_manager.gd" id="5_14ddr"]
+
+[node name="BoardScene" type="Node3D"]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("2_bf7bl")
+
+[node name="BoardManager" type="Node3D" parent="."]
+script = ExtResource("3_014cc")
+
+[node name="UIManager" type="Node" parent="."]
+script = ExtResource("5_14ddr")
+
+[node name="AIController" type="Node" parent="."]
+script = ExtResource("1_h6wsc")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 8.74227e-08, -2.24196e-16, -5.61943e-08, 0.642787, 0.766044, -6.69697e-08, 0.766044, -0.642787, -1.847, 3.93, -7.533)
+current = true
+fov = 58.3
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.353553, -0.353553, 2.4663e-16, 0.707107, 0.707107, 0.5, -0.612372, 0.612372, 0, 0, 0)
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, -0.5, -3.5)
+mesh_library = ExtResource("1_sb2le")
+cell_size = Vector3(1, 0.1, 1)
+data = {
+"cells": PackedInt32Array(0, 0, 131072, 0, 65535, 131073, 65535, 0, 131073, 1, 0, 131073, 0, 1, 131073, 65534, 0, 131072, 2, 0, 131072, 1, 65535, 131072, 65535, 65535, 131072, 65535, 1, 131072, 1, 1, 131072, 0, 65534, 131072, 0, 2, 131072, 1, 65534, 131073, 2, 65535, 131073, 65535, 65534, 131073, 65534, 65535, 131073, 65534, 1, 131073, 65535, 2, 131073, 1, 2, 131073, 2, 1, 131073, 2, 2, 131072, 2, 65534, 131072, 65534, 65534, 131072, 65534, 2, 131072, 3, 65534, 131073, 2, 65533, 131073, 0, 65533, 131073, 65534, 65533, 131073, 3, 0, 131073, 3, 2, 131073, 3, 65535, 131072, 3, 1, 131072, 3, 65533, 131072, 1, 65533, 131072, 65535, 65533, 131072, 65535, 3, 131072, 1, 3, 131072, 3, 3, 131072, 2, 3, 131073, 0, 3, 131073, 65534, 3, 131073, 4, 65534, 131072, 4, 0, 131072, 4, 2, 131072, 4, 3, 131073, 4, 1, 131073, 4, 65535, 131073, 4, 65533, 131073)
+}
+
+[node name="Pieces" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00967, 0, 0)

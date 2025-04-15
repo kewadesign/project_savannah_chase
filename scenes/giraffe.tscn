@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://nqmandu3m1ot"]
+
+[ext_resource type="PackedScene" uid="uid://c2c0xv1vocms3" path="res://scenes/piece_base.tscn" id="1_2e22k"]
+[ext_resource type="ArrayMesh" uid="uid://csbpg3nl2u473" path="res://assets/models/Animal_Chess_Figures/Giraffe_Chess_Piece.obj" id="2_svvme"]
+
+[node name="Giraffe" instance=ExtResource("1_2e22k")]
+
+[node name="Mesh" parent="." index="0"]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0.0293301, 0)
+mesh = ExtResource("2_svvme")
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00211096, 0.698145, 0)

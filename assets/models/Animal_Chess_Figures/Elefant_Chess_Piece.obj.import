@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cyfvblqkr4uvp"
+path="res://.godot/imported/Elefant_Chess_Piece.obj-b40d5b7983a0231b224321b3b390f71c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Elefant_Chess_Piece.obj-b40d5b7983a0231b224321b3b390f71c.mesh"]
+
+source_file="res://assets/models/Animal_Chess_Figures/Elefant_Chess_Piece.obj"
+dest_files=["res://.godot/imported/Elefant_Chess_Piece.obj-b40d5b7983a0231b224321b3b390f71c.mesh", "res://.godot/imported/Elefant_Chess_Piece.obj-b40d5b7983a0231b224321b3b390f71c.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

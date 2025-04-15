@@ -1,0 +1,18 @@
+[gd_resource type="MeshLibrary" load_steps=3 format=3 uid="uid://dqnu3ronox4uc"]
+
+[ext_resource type="BoxMesh" uid="uid://cmluu23aqkqit" path="res://assets/models/tile_light.res" id="1_fdf05"]
+[ext_resource type="BoxMesh" uid="uid://b85iqgj3kscnc" path="res://assets/models/tile_dark.res" id="2_r3i01"]
+
+[resource]
+item/0/name = ""
+item/0/mesh = ExtResource("1_fdf05")
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/shapes = []
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
+item/1/name = ""
+item/1/mesh = ExtResource("2_r3i01")
+item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/shapes = []
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/navigation_layers = 1
